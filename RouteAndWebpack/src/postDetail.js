@@ -20,7 +20,7 @@ class PostDetails extends React.Component {
             param_userId: ""
         };
         util.infoPart = util.infoPart.bind(this);
-        util.returnToFirstPage = util.returnToFirstPage.bind(this);
+        
     }
 
     componentDidMount() {

@@ -1,0 +1,79 @@
+#toReturn
+{
+    display: inline-block;
+
+    text-decoration: underline;
+
+    color: blue;
+}
+body
+{
+    font-family: sans-serif;
+
+    margin: 0;
+    padding: 0;
+}
+.Listdiv
+{
+    font-size: 19px;
+
+    position: relative;
+    right: -50px;
+
+    width: 450px;
+    height: 100px;
+    margin-top: 15px;
+
+    opacity: .8;
+    background: #afaaaa;
+}
+.Listdivbody
+{
+    font-size: 19px;
+
+    position: relative;
+    right: -50px;
+    bottom: 15px;
+
+    width: 450px;
+    height: 100px;
+    margin-top: 15px;
+
+    opacity: .8;
+    background: white;
+}
+.leftdiv
+{
+    float: left;
+
+    width: 200px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+
+    border: solid;
+}
+#linkforinfo
+{
+    display: inline-block;
+
+    padding: 30px;
+    padding-left: 200px;
+
+    text-decoration: underline;
+
+    color: blue;
+}
+.rightdiv
+{
+    width: 450px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+
+    border: solid;
+}
+.AuthorDiv
+{
+    padding-left: 50px;
+}

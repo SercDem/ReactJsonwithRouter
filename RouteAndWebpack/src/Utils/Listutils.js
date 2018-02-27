@@ -20,9 +20,9 @@ function onListClick(e) {
 
 function Getusername(props) {
     //We get the object with its title name
-    let t = props.postData.find(q => q.title === props.vTitle);
+    let t = props.postData.find(q => q.title === props.title);
     let vv = t.userId;
-    if (props.no.toString() === vv.toString()) {
+    if (props.id.toString() === vv.toString()) {
         let c = props.userData.find(q => q.id === vv);
         return <span> {c.name} </span>;
     } else {

@@ -1,8 +1,8 @@
 import React from "react";
 import "./index.css";
-import Showcomments2 from "./ShowComments2";
+import ShowComments2 from "./showComments2";
 
-class Showcomment extends React.Component {
+class ShowComments extends React.Component {
     render() {
         //Assinging the values we get from prop so they are easier to call
         let TitleArra = [],
@@ -22,7 +22,7 @@ class Showcomment extends React.Component {
         mappa = mappa.map(function (item, index) {
             i++;
             return (
-                <Showcomments2
+                <ShowComments2
                     item={item}
                     key={index}
                     tTitle={TitleArra[i]}
@@ -39,4 +39,4 @@ class Showcomment extends React.Component {
     }
 }
 
-export default Showcomment;
+export default ShowComments;

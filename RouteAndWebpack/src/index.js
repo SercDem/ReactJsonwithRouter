@@ -1,16 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import Listpart1 from "./Listpart1";
-import Postdetail from "./Postdetail";
+import ListPart1 from "./listPart1";
+import PostDetails from "./postDetail";
 import {BrowserRouter, Route} from "react-router-dom";
 
 function App() {
     return (
         <BrowserRouter>
             <div>
-                <Route exact path="/" component={Listpart1}/>
-                <Route path="/Second" component={Postdetail}/>
+                <Route exact path="/" component={ListPart1}/>
+                <Route path="/Second" component={PostDetails}/>
             </div>
         </BrowserRouter>
     );

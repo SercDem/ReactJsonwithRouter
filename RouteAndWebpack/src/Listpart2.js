@@ -1,9 +1,9 @@
 import React from "react";
 import "./index.css";
-import * as util from "./Utils/Listutils";
-import Getusername from "./Utils/Listutils";
+import * as util from "./utils/listUtils";
+import Getusername from "./utils/listUtils";
 
-class Listpart2 extends React.Component {
+class ListPart2 extends React.Component {
     constructor(props) {
         super(props);
         util.onListClick = util.onListClick.bind(this);
@@ -18,8 +18,8 @@ class Listpart2 extends React.Component {
           <p/>
           Username:
           <Getusername
-              no={a.userId}
-              vTitle={this.props.item}
+              id={a.userId}
+              title={this.props.item}
               userData={this.props.userData}
               postData={this.props.postData}
           />
@@ -29,4 +29,4 @@ class Listpart2 extends React.Component {
     }
 }
 
-export default Listpart2;
+export default ListPart2;

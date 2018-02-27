@@ -1,6 +1,6 @@
 import React from "react";
 
-class Showcomments2 extends React.Component {
+class ShowComments2 extends React.Component {
     render() {
         return (
             <div>
@@ -16,4 +16,4 @@ class Showcomments2 extends React.Component {
     }
 }
 
-export default Showcomments2;
+export default ShowComments2;

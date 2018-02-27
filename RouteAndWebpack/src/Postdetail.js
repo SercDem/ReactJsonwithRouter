@@ -1,17 +1,15 @@
 import React from "react";
 import "./index.css";
-import Showcomment from "./Showcomments";
-import * as util from "./Utils/Postdetailutils";
+import ShowComments from "./showComments";
+import * as util from "./utils/postDetailUtils";
 
-class Postdetail extends React.Component {
+class PostDetails extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             v5: false,
             userData: [],
             postData: [],
-            bodyCount: [],
-            titleCount: [],
             dTitle: "",
             dBody: "",
             dUsername: "",
@@ -29,8 +27,7 @@ class Postdetail extends React.Component {
         let params = util.getSearchParameters();
         let param_id = params.id;
         let param_userId = params.userId;
-        console.log(param_id);
-        console.log(param_userId);
+
         fetch("https://jsonplaceholder.typicode.com/users")
             .then(result => result.json())
             .then(data => {
@@ -39,12 +36,14 @@ class Postdetail extends React.Component {
                     .then(result => result.json())
                     .then(dataPost => {
                         this.setState({postData: dataPost});
+                        let tArray = [];
+                        let bArray = [];
                         for (let i = 0; i < this.state.postData.length; i++) {
                             if (
                                 this.state.postData[i].id.toString() === param_userId.toString()
                             ) {
-                                this.state.titleCount.push(this.state.postData[i].title);
-                                this.state.bodyCount.push(this.state.postData[i].body);
+                                tArray.push(this.state.postData[i].title);
+                                bArray.push(this.state.postData[i].body);
                             }
                         }
 
@@ -56,8 +55,6 @@ class Postdetail extends React.Component {
                             q => q.id.toString() === param_id.toString()
                         );
 
-                        console.log(params);
-
                         this.setState({
                             dTitle: obj2.title,
                             dBody: obj2.body,
@@ -65,6 +62,7 @@ class Postdetail extends React.Component {
                             dUsername: obj1.username,
                             dEmail: obj1.email,
                             dPhone: obj1.phone,
+
                             param_id: param_id,
                             param_userId: param_userId
                         });
@@ -101,7 +99,7 @@ class Postdetail extends React.Component {
         </span>
                 <div id="showcomment">
                     {this.state.v5 ? (
-                        <Showcomment
+                        <ShowComments
                             takenID={i_id}
                             usD={this.state.userData}
                             poD={this.state.postData}
@@ -116,4 +114,4 @@ class Postdetail extends React.Component {
     }
 }
 
-export default Postdetail;
+export default PostDetails;

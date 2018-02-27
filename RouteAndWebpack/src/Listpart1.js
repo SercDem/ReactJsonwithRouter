@@ -1,18 +1,12 @@
 import React from "react";
 import "./index.css";
-import Listpart2 from "./Listpart2";
+import ListPart2 from "./listPart2";
 
-class Listpart1 extends React.Component {
+class ListPart1 extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            _titles: [],
-            dEmail: "",
-            dPhone: "",
-            dUserName: "",
-            dName: "",
-            dTitle: "",
-            dBodyCount: [],
+            titles: [],
             userData: [],
             postData: [],
             uName: []
@@ -29,19 +23,17 @@ class Listpart1 extends React.Component {
                     .then(result => result.json())
                     .then(dataPost => {
                         this.setState({postData: dataPost});
-                        //Pushing usernames into uName named array
-                        let nArray = [];
+                        let nameArray = [];
                         for (let i = 0; i < this.state.userData.length; i++) {
-                            nArray.push(this.state.userData[i].name);
+                            nameArray.push(this.state.userData[i].name);
                         }
-                        //Pushing titlenames into pTitle named array
-                        let tArray = [];
+                        let titleArray = [];
                         for (let i = 0; i < this.state.postData.length; i++) {
-                            tArray.push(this.state.postData[i].title);
+                            titleArray.push(this.state.postData[i].title);
                         }
                         this.setState({
-                            _titles: tArray,
-                            uName: nArray
+                            titles: titleArray,
+                            uName: nameArray
                         });
                     });
             });
@@ -51,13 +43,13 @@ class Listpart1 extends React.Component {
         //Mapping the titles we have and giving incremental id to elements
         let userData = this.state.userData;
         let postData = this.state.postData;
-        let titleList = this.state._titles;
+        let titleList = this.state.titles;
         let i = 0;
         let itemList;
         itemList = titleList.map(function (item, index) {
             i++;
             return (
-                <Listpart2
+                <ListPart2
                     item={item}
                     key={index}
                     i_id={i}
@@ -75,4 +67,4 @@ class Listpart1 extends React.Component {
     }
 }
 
-export default Listpart1;
+export default ListPart1;
